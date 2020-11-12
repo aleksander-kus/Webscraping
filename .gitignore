@@ -150,5 +150,6 @@ dmypy.json
 *.code-workspace
 
 .config/*.html
+.config/*.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/python,vscode
