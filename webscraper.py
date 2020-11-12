@@ -16,6 +16,15 @@ class Webscraper():
         self.startDriver()
         self.readConfigFile()
 
+    def readConfigFile(self):
+        with open(self.path + '.config/webscraper.json') as f:
+            config = json.load(f)
+        if 'scripts' in config:
+            self.scripts = config['scripts']
+        else:
+            print("wrong JSON config file format")
+            exit(-1)
+
     def __del__(self):
         self.driver.close()
 
