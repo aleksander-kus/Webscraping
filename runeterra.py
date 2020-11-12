@@ -37,6 +37,13 @@ class Runeterra():
             new_titles.append(title)
         return new_titles
 
+    def compare_old_and_new_titles(self, old, new):
+        titles = []
+        for line in difflib.unified_diff(old, new):
+            if line[0] == "+" and len(line) != 1 and line[1] != "+":
+                titles.append(line.replace("+", ""))
+        return titles
+
 
     def __del__(self):
         self.source.close()
