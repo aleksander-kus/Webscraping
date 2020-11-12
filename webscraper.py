@@ -25,6 +25,14 @@ class Webscraper():
             print("wrong JSON config file format")
             exit(-1)
 
+    def runScripts(self):
+        try:
+            for script in self.scripts:
+                self.processScript(script)
+        except:
+            print("wrong JSON config file format")
+            exit(-1)
+
     def __del__(self):
         self.driver.close()
 
