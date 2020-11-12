@@ -48,4 +48,5 @@ class Webscraper():
 
 
 if __name__ == "__main__":
-    pass
+    scraper = Webscraper()
+    scraper.runScripts()
