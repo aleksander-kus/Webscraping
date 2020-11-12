@@ -44,6 +44,12 @@ class Runeterra():
                 titles.append(line.replace("+", ""))
         return titles
 
+    def compose_message(self, titles):
+        message = ""
+        for title in titles:
+            message += title + "\n"
+        return ("New LoR article: ", message)
+
 
     def __del__(self):
         self.source.close()
