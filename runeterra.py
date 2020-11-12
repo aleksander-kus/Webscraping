@@ -27,6 +27,16 @@ class Runeterra():
         send_message.send_message(msg[0], msg[1])
         self.update_titles(new_titles)
 
+    def get_new_titles_from_source(self):
+        soup = BeautifulSoup(self.source, 'html.parser')
+        result = list(soup.find("div", class_='infinite-scroll-component'))[0]
+        children = list(result.children)
+        new_titles = []
+        for child in children:
+            title = child.find("h2").string
+            new_titles.append(title)
+        return new_titles
+
 
     def __del__(self):
         self.source.close()
