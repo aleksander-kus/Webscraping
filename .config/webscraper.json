@@ -1,0 +1,16 @@
+{
+    "scriptFolder": "/home/student/bin/",
+    "scripts": [
+      {
+        "name": "runeterra",
+        "enabled": true,
+        "source": "runeterra.py",
+        "html": ".config/runeterra_source.html",
+        "url": "https://playruneterra.com/en-us/news",
+        "login": {
+          "required": false,
+          "method": ""
+        }
+      }
+    ]
+  }
