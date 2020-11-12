@@ -62,4 +62,5 @@ class Runeterra():
         
 
 if __name__ == "__main__":
-    pass
+    script = Runeterra()
+    script.run()
