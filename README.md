@@ -1,0 +1,1 @@
+A python project to scrape some webpages and notify the user if some contents have changed.
