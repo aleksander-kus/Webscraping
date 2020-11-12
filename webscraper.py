@@ -33,6 +33,16 @@ class Webscraper():
             print("wrong JSON config file format")
             exit(-1)
 
+    def processScript(self, script):
+        if script['enabled'] == False:
+            return
+        if script['login']['required'] == True:
+            getattr(self, script['login']['method'])()
+        self.driver.get(script['url'])
+        with open(self.path + script['html'], "w") as f:
+            f.write(self.driver.page_source)
+        subprocess.Popen(['python3', self.path + script['source']])
+
     def __del__(self):
         self.driver.close()
 
