@@ -50,6 +50,11 @@ class Runeterra():
             message += title + "\n"
         return ("New LoR article: ", message)
 
+    def update_titles(self, titles):
+        self.titles_file.close()
+        self.titles_file = open(self.path + ".config/titles.txt", "w")
+        for title in titles:
+            self.titles_file.write(title + "\n")
 
     def __del__(self):
         self.source.close()
