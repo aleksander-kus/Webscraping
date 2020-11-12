@@ -2,6 +2,7 @@
 
 import json
 import subprocess
+from os import getcwd
 from selenium import webdriver
 
 class Webscraper():
@@ -12,7 +13,7 @@ class Webscraper():
         self.driver = webdriver.Chrome(options=chrome_options)
         
     def __init__(self):
-        self.path = '/home/student/bin/'
+        self.path = getcwd() + '/'
         self.startDriver()
         self.readConfigFile()
 
